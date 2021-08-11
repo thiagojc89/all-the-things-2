@@ -4,7 +4,7 @@ import './App.css';
 import FunctionalThings from '../FunctionalThings/FunctionalThings'
 import StyledThings from '../StyledThings/StyledThings'
 import ManliestThings from '../ManliestThings/ManliestThings'
-
+import JulianThings from '../JulianThings/JulianThings'
 class App extends Component {
   state = { 
     davidsThings: [
@@ -72,6 +72,28 @@ class App extends Component {
         image: 'https://i.imgur.com/3BmfSOA.png',
         attributes: ["not a taco", "not Windows", "not macOS", "Penguins?"] 
       },
+    ],
+    thiagosThings: [
+      {
+        name: "guitars",
+        image: "https://cdn.mos.cms.futurecdn.net/Ge25ccbyKQ76Et9bBjFnxk.jpg",
+        attributes: ["musical", "come in many varieties", "strummable", "non-edible"],
+      },
+      {
+        name: "movies",
+        image: "https://observer.com/wp-content/uploads/sites/2/2021/05/summer-movies-2021-new-e1620919489437.jpg?quality=80",
+        attributes: ["enjoyable couch activity", "come in many varieties", "💙Pulp Fiction💙", "requires popcorn"],
+      },
+      {
+        name: "beer",
+        image: "https://health.clevelandclinic.org/wp-content/uploads/sites/3/2015/08/beerAllergy-1165339040-770x553-1.jpg",
+        attributes: ["something fun to do in Chicago", "a great way to end a long day", "come in many varieties", "drinkable"],
+      },
+      {
+        name: "dogs",
+        image: "https://www.thesprucepets.com/thmb/pmCLFm6wMUFcCE1xeQMRfyhadxc=/1500x844/smart/filters:no_upscale()/GettyImages-175928868-120f47906f4849969fcdab28e2e4f494.jpg",
+        attributes: ["come in many varieties", "man's best friend", "much better than cats", "should probably poop outside"],
+      },
     ]
   } 
   render() {
@@ -83,7 +105,8 @@ class App extends Component {
             <h1>All-The-Things</h1>
             <Link to="/the-functional-things">Shahzad's Things</Link><br/>
             <Link to="/the-well-styled-things">David's Things</Link><br/>
-            <Link to="/the-manliest-things">Ben's Things</Link>
+            <Link to="/the-manliest-things">Ben's Things</Link><br />
+            <Link to="/the-best-things">Thiago's Things</Link>
           </>
         </Route>
         {/* All the <Route> components should live here */}
@@ -95,6 +118,9 @@ class App extends Component {
         </Route>
         <Route exact path='/the-manliest-things'>
           <ManliestThings things={this.state.bensThings} />
+        </Route>
+        <Route exact path='/the-best-things'>
+          <JulianThings things={this.state.thiagosThings} />
         </Route>
       </>
       
