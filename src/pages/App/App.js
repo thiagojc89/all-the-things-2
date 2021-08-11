@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom'
 import './App.css';
 import FunctionalThings from '../FunctionalThings/FunctionalThings'
 import StyledThings from '../StyledThings/StyledThings'
+import ManliestThings from '../ManliestThings/ManliestThings'
 
 class App extends Component {
   state = { 
@@ -49,6 +50,28 @@ class App extends Component {
         image: "https://i.imgur.com/gRxOxsA.jpg", 
         attributes: ["makes you live a long time", "consistent poops", "probably tacos sometimes!", "farm to market"], 
       },
+    ],
+    bensThings: [
+      { 
+        name: 'banana',
+        image: 'https://images.unsplash.com/photo-1587132137056-bfbf0166836e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+        attributes: ['potassium-rich', 'yellow when good', 'not a taco', 'ring ring ring ring ring ring ring']
+      },
+      {
+        name: 'turkey',
+        image: 'https://images.unsplash.com/photo-1560011961-4ab41261de01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+        attributes: ['such gobbles', 'good when stuffed', 'not a taco', 'why gravy exists']
+      },
+      {
+        name: 'taco',
+        image: 'https://images.unsplash.com/photo-1545093149-618ce3bcf49d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80',
+        attributes: ['yummy in my tummy', 'salsas may vary', 'definitely a taco', 'very edible']
+      },
+      {
+        name: 'linux',
+        image: 'https://i.imgur.com/3BmfSOA.png',
+        attributes: ["not a taco", "not Windows", "not macOS", "Penguins?"] 
+      },
     ]
   } 
   render() {
@@ -60,6 +83,7 @@ class App extends Component {
             <h1>All-The-Things</h1>
             <Link to="/the-functional-things">Shahzad's Things</Link><br/>
             <Link to="/the-well-styled-things">David's Things</Link><br/>
+            <Link to="/the-manliest-things">Ben's Things</Link>
           </>
         </Route>
         {/* All the <Route> components should live here */}
@@ -68,6 +92,9 @@ class App extends Component {
         </Route>
         <Route exact path='/the-well-styled-things'>
           <StyledThings things={this.state.davidsThings} />
+        </Route>
+        <Route exact path='/the-manliest-things'>
+          <ManliestThings things={this.state.bensThings} />
         </Route>
       </>
       
