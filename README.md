@@ -1,4 +1,4 @@
-# all-the-things the matters
+# all-the-things
 
 ## Your task for today!
 
